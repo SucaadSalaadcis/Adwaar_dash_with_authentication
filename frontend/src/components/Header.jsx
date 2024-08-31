@@ -1,15 +1,18 @@
 import React from 'react'
 import Buttons from '../ReusibleComp/Buttons'
 import { IoSettingsOutline } from "react-icons/io5";
+import { useSelector } from 'react-redux';
 
 
 export default function Header() {
+  const user = useSelector((state) => state.Auth.user);
+  console.log(user);
   return (
     <>
       {/* header */}
       <div className="navbar bg-base-100 ml-1 shadow-lg sm:w-[980px] w-full">
         <div className="flex-1">
-          <p className="  text-yellow-600 text-xl">ADWAAR</p>
+          <p className="  text-yellow-600 text-3xl"><span className='text-blue-950'>Welcome : </span>{user.name}</p>
           {/* <a className="btn  bg-yellow-400 text-white text-xl">Adwaar</a> */}
         </div>
 
