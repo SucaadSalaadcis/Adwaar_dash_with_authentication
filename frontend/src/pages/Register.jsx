@@ -47,7 +47,7 @@ export default function Register() {
 
                 </div>
                 <div className="relative">
-                  <input id="email" name="email" type="text" autoComplete='off'
+                  <input id="email" name="email" type="email" autoComplete='off'
                     onChange={(e) => setEmail(e.target.value)}
                     className="peer  h-10 w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:borer-rose-600" placeholder="Email " />
 

@@ -29,7 +29,7 @@ const deletUser = async (req, res) => {
             return res.status(404).json({ message: "user not found" })
         }
 
-        res.status(200).json({ message: "user delet successfully ", user })
+        res.status(200).json({ message: "user deleted successfully ", user })
 
     } catch (error) {
         res.status(500).json({ message: "intenral server error" })
