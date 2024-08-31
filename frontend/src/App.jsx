@@ -40,7 +40,6 @@ function App() {
         </Route>
 
         {/* nasted dash route */}
-
         <Route path='/dashboard' element={<DashboardLayout />}>
 
           <Route path='content' element={< Content />} />
