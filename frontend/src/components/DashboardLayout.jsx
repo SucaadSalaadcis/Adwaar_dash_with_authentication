@@ -10,6 +10,7 @@ import { FaWpforms } from "react-icons/fa";
 import { IoBarChartSharp } from "react-icons/io5";
 import { IoLogOut } from "react-icons/io5";
 
+import { toast } from 'react-hot-toast';
 
 import Header from './Header';
 
@@ -83,7 +84,7 @@ export default function DashboardLayout() {
                 navigate('/login')
             }
         } catch (error) {
-            console.log(error)
+            toast.error(error.response.data.message)
         }
     }
 

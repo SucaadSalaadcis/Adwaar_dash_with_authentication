@@ -5,9 +5,8 @@ import { deleteUser, get, put } from '../services/ApiEndPoints'
 import { toast } from 'react-hot-toast';
 import { useSelector } from 'react-redux';
 import { FaTrash, FaUsers } from 'react-icons/fa';
-import { FaPenToSquare } from "react-icons/fa6";
-import { Link } from 'react-router-dom';
-import axios from 'axios';
+
+
 
 export default function Users() {
     const user = useSelector((state) => state.Auth.user);
@@ -26,7 +25,7 @@ export default function Users() {
             }
 
         } catch (error) {
-            console.log(error)
+            toast.error(error.response.data.message)
         }
     }
 
@@ -58,7 +57,7 @@ export default function Users() {
             toast(`${user.name} is now admin`)
              GetUsers();
         } catch (error) {
-            console.log(error)
+            toast.error(error.response.data.message)
         }
     }
 

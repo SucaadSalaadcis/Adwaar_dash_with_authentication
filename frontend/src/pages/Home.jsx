@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { post } from '../services/ApiEndPoints';
 import { logout } from '../redux/AuthSlice';
+import { toast } from 'react-hot-toast';
 
 export default function Home() {
 
@@ -21,7 +22,7 @@ export default function Home() {
         navigate('/login')
       }
     } catch (error) {
-      console.log(error)
+      toast.error(error.response.data.message)
     }
   }
 

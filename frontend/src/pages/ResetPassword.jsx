@@ -19,9 +19,9 @@ export default function ResetPassword() {
                 navigate('/login');
             }
             console.log(response.data);
-        }).catch((err) => console.log(err));
+        }).catch((error) => toast.error(error.response.data.message));
     }
-    // console.log(password);
+   
     return (
         <div className='sign-up-container'>
             <form className='sign-up-form'

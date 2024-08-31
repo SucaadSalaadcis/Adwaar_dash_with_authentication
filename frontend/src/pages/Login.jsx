@@ -4,13 +4,13 @@ import { toast } from 'react-hot-toast';
 import { useDispatch } from 'react-redux';
 import { SetUser } from '../redux/AuthSlice';
 import { Link, useNavigate } from 'react-router-dom';
-// import axiosPublicURL from '../services/ApiEndPoints'
+
 
 export default function Login() {
 
     const dispatch = useDispatch();
     const navigate = useNavigate();
-    // const useAxios = axiosPublicURL();  
+  
 
 
     const [email, setEmail] = useState('');
@@ -18,7 +18,7 @@ export default function Login() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log(email, password)
+        // console.log(email, password);
         try {
             const request = await post('/api/auth/login', { email, password })
             // const request = await useAxios.post('/api/auth/login', { email, password })
@@ -35,7 +35,7 @@ export default function Login() {
             }
             console.log(reponse)
         } catch (error) {
-            console.log(error)
+            toast.error(error.response.data.message)
         }
     }
 

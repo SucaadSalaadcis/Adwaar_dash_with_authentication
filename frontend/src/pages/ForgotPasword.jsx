@@ -19,7 +19,9 @@ export default function ForgotPasword() {
                 toast.success('check your email for reset password link')
                 navigate('/login');
             }
-        }).catch((err) => console.log(err));
+        }).catch((error) => {
+            toast.error(error.response.data.message)
+        });
     }
     // console.log(email);
     return (

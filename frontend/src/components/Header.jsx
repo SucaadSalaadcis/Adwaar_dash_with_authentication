@@ -6,7 +6,7 @@ import { useSelector } from 'react-redux';
 
 export default function Header() {
   const user = useSelector((state) => state.Auth.user);
-  console.log(user);
+  // console.log(user);
   return (
     <>
       {/* header */}
